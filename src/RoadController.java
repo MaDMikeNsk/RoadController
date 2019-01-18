@@ -51,7 +51,7 @@ public class RoadController
             }
 
             /*  
-             * Проверяем высоту и массу автомобиля, вычисляем стоимость проезда
+             * Проверяем высоту и массу автомобиля, вычисляем стоимость проезда/
              */
             Integer carHeight = car.getHeight();                        //Integer carHeight
             Integer price = 0;                                          //Integer price
