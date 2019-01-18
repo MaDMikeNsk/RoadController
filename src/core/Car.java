@@ -1,9 +1,7 @@
 package core;
-
 import java.text.DecimalFormat;
 
-public class Car
-{
+ public class Car {
     private String number;
     private Integer height;
     private Double weight;
@@ -11,8 +9,7 @@ public class Car
     private Boolean isSpecial;
     DecimalFormat numberFormat = new DecimalFormat("#.000");    //Добавлен формат вывода массы с 3 знаками после запятой
 
-    public Car(String carNumber, Integer carHeight, Double carWeight, Boolean carHasVehicle)
-    {
+    public Car(String carNumber, Integer carHeight, Double carWeight, Boolean carHasVehicle) {
         number = carNumber;
         height = carHeight;
         weight = carWeight;

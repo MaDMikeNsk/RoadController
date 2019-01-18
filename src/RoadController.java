@@ -55,26 +55,27 @@ public class RoadController
              */
             Integer carHeight = car.getHeight();                        //Integer carHeight
             Integer price = 0;                                          //Integer price
-            if(carHeight > controllerMaxHeight)
-            {
+            if(carHeight > controllerMaxHeight) {
                 blockWay("высота вашего ТС превышает высоту пропускного пункта!");
                 continue;
             }
-            else if(carHeight > passengerCarMaxHeight)
-            {
+            else if(carHeight > passengerCarMaxHeight) {
                 Double weight = WeightMeter.getWeight(car);             //Double weight
                 //Грузовой автомобиль
-                if(weight > passengerCarMaxWeight)
-                {
+                if (weight > passengerCarMaxWeight) {
                     price = cargoCarPrice;
-                    if(car.hasVehicle()) {
+                    if (car.hasVehicle()) {
                         price = price + vehicleAdditionalPrice;
                     }
                 }
-                //Легковой автомобиль
+                //Грузовой автомобиль (без прицепа)
                 else {
-                    price = passengerCarPrice;
+                    price = cargoCarPrice;
                 }
+            //Легковой автомобиль
+            }
+            else{
+                price = passengerCarPrice;
             }
 
             /*
