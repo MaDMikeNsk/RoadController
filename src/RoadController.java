@@ -24,13 +24,7 @@ public class RoadController
             System.out.println(car);
             System.out.println("Скорость: " + Camera.getCarSpeed(car) + " км/ч");
 
-            /*
-             * Пропускаем автомобили спецтранспорта
-            **/
-            /*if(car.isSpecial()) {
-                openWay();
-                continue;
-            }/*
+
 
             /*
              * Проверка на наличие номера в списке номеров нарушителей
@@ -44,8 +38,16 @@ public class RoadController
                     blockWay("не двигайтесь с места! За вами уже выехали!");
                     break;
                 }
-
             }
+
+            /*
+             * Пропускаем автомобили спецтранспорта
+             **/
+            if(car.isSpecial() && !Police.wasCalled()) {
+                openWay();
+                continue;
+            }
+
             if(Police.wasCalled()) {
                 continue;
             }
@@ -68,12 +70,12 @@ public class RoadController
                         price = price + vehicleAdditionalPrice;
                     }
                 }
-                //Грузовой автомобиль (без прицепа)
+                //Легковой автомобиль, но высота > passengerCarMaxHeight, а вес <= passengerCarMaxWeight
                 else {
-                    price = cargoCarPrice;
+                    price = passengerCarPrice;
                 }
-            //Легковой автомобиль
             }
+            //Легковой автомобиль
             else{
                 price = passengerCarPrice;
             }
