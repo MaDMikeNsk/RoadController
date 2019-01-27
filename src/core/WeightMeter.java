@@ -5,7 +5,7 @@ package core;
  */
 public class WeightMeter
 {
-    public static Double getWeight(Car car)
+    public static double getWeight(Car car)
     {
         return car.getWeight();
     }

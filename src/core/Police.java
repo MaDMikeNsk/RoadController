@@ -6,7 +6,7 @@ import java.util.HashSet;
  */
 public class Police
 {
-    private static Boolean called = false;
+    private static boolean called = false;
     private static HashSet<String> criminalNumbers;
 
     public static HashSet<String> getCriminalNumbers()
@@ -15,8 +15,8 @@ public class Police
             return criminalNumbers;
         }
         criminalNumbers = new HashSet<>();
-        Integer count = (int) (200 * Math.random());
-        for(Integer i = 0; i < count; i++)
+        int  count = (int) (200 * Math.random());
+        for(int i = 0; i < count; i++)
         {
             String randomNumber = Double.toString(Math.random()).substring(2, 5);
             criminalNumbers.add(randomNumber);
@@ -30,7 +30,7 @@ public class Police
         System.out.println("Вызов полиции... Причина: " + message);
     }
 
-    public static Boolean wasCalled()
+    public static boolean wasCalled()
     {
         return called;
     }

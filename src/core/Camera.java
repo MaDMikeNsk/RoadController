@@ -9,8 +9,8 @@ public class Camera
     public static Car getNextCar()
     {
         String randomNumber = Double.toString(Math.random()).substring(2, 5);
-        Integer randomHeight = (int) (1000 + 3500. * Math.random());
-        Double randomWeight = 600 + 10000 * Math.random();
+        int randomHeight = (int) (1000 + 3500. * Math.random());
+        double randomWeight = 600 + 10000 * Math.random();
         Car car = new Car(randomNumber, randomHeight, randomWeight, Math.random() > 0.5);
         if(Math.random() < 0.15) {
             car.setIsSpecial();
@@ -20,7 +20,7 @@ public class Camera
         return car;
     }
 
-    public static Integer getCarSpeed(Car car)
+    public static int getCarSpeed(Car car)
     {
         String carNumber = car.getNumber();
         if(!carsSpeed.containsKey(carNumber)) {

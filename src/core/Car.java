@@ -3,13 +3,13 @@ import java.text.DecimalFormat;
 
  public class Car {
     private String number;
-    private Integer height;
-    private Double weight;
-    private Boolean hasVehicle;
-    private Boolean isSpecial;
+    private int height;
+    private double weight;
+    private boolean hasVehicle;
+    private boolean isSpecial;
     DecimalFormat numberFormat = new DecimalFormat("#.000");    //Добавлен формат вывода массы с 3 знаками после запятой
 
-    public Car(String carNumber, Integer carHeight, Double carWeight, Boolean carHasVehicle) {
+    public Car(String carNumber, int carHeight, double carWeight, boolean carHasVehicle) {
         number = carNumber;
         height = carHeight;
         weight = carWeight;
@@ -31,24 +31,24 @@ import java.text.DecimalFormat;
         return number;
     }
 
-    public Integer getHeight()
+    public int getHeight()
     {
         return height;
     }
 
-    public Boolean isSpecial()
+    public boolean isSpecial()
     {
         return isSpecial;
     }
 
-    public Boolean hasVehicle()
+    public boolean hasVehicle()
     {
         return hasVehicle;
     }
 
     //=========================================================================
 
-    Double getWeight()
+    double getWeight()
     {
         return weight;
     }
