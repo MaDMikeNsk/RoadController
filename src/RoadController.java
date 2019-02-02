@@ -1,5 +1,4 @@
 import core.*;
-//import core.Camera;
 
 public class RoadController
 {
@@ -40,14 +39,6 @@ public class RoadController
                 }
             }
 
-            /*
-             * Пропускаем автомобили спецтранспорта
-             **/
-            if(car.isSpecial() && !Police.wasCalled()) {
-                openWay();
-                continue;
-            }
-
             if(Police.wasCalled()) {
                 continue;
             }
@@ -61,6 +52,14 @@ public class RoadController
                 blockWay("высота вашего ТС превышает высоту пропускного пункта!");
                 continue;
             }
+            /*
+             * Пропускаем автомобили спецтранспорта
+             **/
+            else if(car.isSpecial() && !Police.wasCalled()) {
+                openWay();
+                continue;
+            }
+
             else if(carHeight > passengerCarMaxHeight) {
                 double weight = WeightMeter.getWeight(car);             //Double weight
                 //Грузовой автомобиль
